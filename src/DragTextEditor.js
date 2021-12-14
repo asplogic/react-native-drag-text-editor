@@ -584,8 +584,7 @@ DragTextEditor.defaultProps = {
   TextDecorationLine: 'none',
   Rotation: 0,
   style: {
-    x: 0,
-    y: 0,
+    zIndex: 1
   }
 };
 
