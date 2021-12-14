@@ -7,6 +7,7 @@ import {
   Image,
   Text,
   TextInput,
+  ViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {
@@ -430,13 +431,13 @@ childMR=()=>{
 
     return (
       <View
-       style={{
-        position: 'absolute',
-         left: x,
+       style={[{
+          position: 'absolute',
+          left: x,
           top: y,
-           width:w,
-            padding: HOLDER_SIZE / 2,
-           }}>
+          width:w,
+          padding: HOLDER_SIZE / 2,
+        }, this.props.style]}>
 
          <TouchableOpacity 
         onPress={()=>this.validPress()}
@@ -559,9 +560,9 @@ DragTextEditor.defaultProps = {
     w: Dimensions.get('window').width,
     h: Dimensions.get('window').height,
   },
-centerPress:null,
-TopLeftAction:null,
-TopRightAction:null,
+  centerPress:null,
+  TopLeftAction:null,
+  TopRightAction:null,
   TopLeftIcon:null,
   TopRightIcon:null,
   FontFamily:null,
@@ -581,7 +582,11 @@ TopRightAction:null,
   onResizeEnd: null,
   FontVariant: [],
   TextDecorationLine: 'none',
-  Rotation: 0
+  Rotation: 0,
+  style: {
+    x: 0,
+    y: 0,
+  }
 };
 
 DragTextEditor.propTypes = {
@@ -597,9 +602,9 @@ DragTextEditor.propTypes = {
     w: PropTypes.number.isRequired,
     h: PropTypes.number.isRequired,
   }),
-centerPress:PropTypes.func,
-TopLeftAction:PropTypes.func,
-TopRightAction:PropTypes.func,
+  centerPress:PropTypes.func,
+  TopLeftAction:PropTypes.func,
+  TopRightAction:PropTypes.func,
   TopLeftIcon:PropTypes.func,
   TopRightIcon:PropTypes.func,
   FontFamily:PropTypes.string,
@@ -620,5 +625,6 @@ TopRightAction:PropTypes.func,
   onResize: PropTypes.func,
   onResizeEnd: PropTypes.func,
   TextDecorationLine: PropTypes.string,
-  Rotation: PropTypes.number
+  Rotation: PropTypes.number,
+  style: ViewPropTypes.style,
 };
