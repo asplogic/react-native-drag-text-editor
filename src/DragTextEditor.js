@@ -21,7 +21,7 @@ const LEFT_HOLDER = 'LEFT_HOLDER';
 const CENTER = 'CENTER';
 const HOLDER_SIZE = 14;
 const TOPLEFT_SIZE = 25;
-const TEXT ="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+const TEXT = 'Enter Text';
 const CLOSE_ICON = require('../icons/closed.png');
 const COMPASS_ICON = require('../icons/compassed.png');
 
